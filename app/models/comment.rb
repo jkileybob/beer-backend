@@ -1,3 +1,3 @@
-class Comment < ApplicationRecord
-  belongs_to :beer
-end
+# class Comment < ApplicationRecord
+#   belongs_to :beer
+# end

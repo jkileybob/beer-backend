@@ -1,5 +1,5 @@
-class CommentSerializer < ActiveModel::Serializer
-  attributes :text
-
-  belongs_to :beer
-end
+# class CommentSerializer < ActiveModel::Serializer
+#   attributes :text
+#
+#   belongs_to :beer
+# end
