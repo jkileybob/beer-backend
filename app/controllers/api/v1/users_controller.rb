@@ -9,8 +9,8 @@ class Api::V1::UsersController < ApplicationController
     render json: User.find(payload[0]["id"]), status: :accepted
   end
 
-  # def show
-  #   render json:  @user = User.find_by(username: params[:username])
-  # end
+  def show
+    render json:  @user = User.find_by(username: params[:username])
+  end
 
 end
