@@ -15,28 +15,59 @@ User.create(
   location: "Washington, D.C."
 )
 
-3.times do
-  User.create(
-    username: Faker::TvShows::ParksAndRec.character,
-    password: "hi",
-    avatar: "https://placekitten.com/200/300",
-    bio: Faker::GreekPhilosophers.quote,
-    location: Faker::Address.city
-  )
-end
+User.create(
+  username: "heebz",
+  password: "gay",
+  avatar: "https://www.fofrescue.org/wp-content/uploads/2018/04/Preparing-200x300.jpg",
+  bio: " I love Ted",
+  location: "Washington, D.C."
+)
+
+# 3.times do
+#   User.create(
+#     username: Faker::TvShows::ParksAndRec.character,
+#     password: "hi",
+#     avatar: "https://placekitten.com/200/300",
+#     bio: Faker::GreekPhilosophers.quote,
+#     location: Faker::Address.city
+#   )
+# end
 
 ###################### BREWERY:
-Brewery.create(
-  name: "Right Proper Brewing Company",
-  street: "624 T Street NW",
-  city: "Washington",
-  state: "District of Columbia",
-  postal_code: "20001",
-  country: "United States",
-  longitude: "-77.021375",
-  latitude: "38.915412",
-  phone: "(202)607-2337"
-)
+# Brewery.create(
+#   id: 1781,
+#   name: "Right Proper Brewing Company",
+#   brewery_type: "brewpub",
+#   street: "624 T Street NW",
+#   city: "Washington",
+#   state: "District of Columbia",
+#   postal_code: "20001",
+#   country: "United States",
+#   longitude: "-77.021375",
+#   latitude: "38.915412",
+#   phone: "(202)607-2337",
+#   website_url: "http://www.rightproperbrewing.com"
+# )
+
+##########  example from Open Brewery DB:
+# {
+#   "id": 1780,
+#   "name": "Right Proper Brewing Company",
+#   "brewery_type": "micro",
+#   "street": "920 Girard St NE",
+#   "city": "Washington",
+#   "state": "District of Columbia",
+#   "postal_code": "20017-3424",
+#   "country": "United States",
+#   "longitude": "-76.9930707764239",
+#   "latitude": "38.9267988",
+#   "phone": "2026072337",
+#   "website_url": "http://www.rightproperbrewing.com",
+#   "updated_at": "2018-08-24T00:26:18.318Z",
+#   "tag_list": [
+#
+#   ]
+# },
 
 # 3.times do
 #   Brewery.create(
@@ -54,25 +85,34 @@ Brewery.create(
 
 
 ####################################### BEER:
-Beer.create(
-  user_id: 1,
-  brewery_id: 1,
-  name: 'Ornette',
-  style: 'Grisette',
-  abv: "3.5%"
-)
-Beer.create(
-  user_id: 1,
-  brewery_id: 1,
-  name: 'COMRADE!',
-  style: 'Anti-Imperial Stout',
-  abv: "2.3%"
-)
+# Beer.create(
+#   user_id: 1,
+#   brewery_id: 1781,
+#   name: 'Ornette',
+#   style: 'Grisette',
+#   abv: "3.5%"
+# )
+#
+# Beer.create(
+#   user_id: 1,
+#   brewery_id: 1780,
+#   name: 'Raised By Wolves',
+#   style: 'Aromatic Pale Ale',
+#   abv: "5.5%"
+# )
+#
+# Beer.create(
+#   user_id: 1,
+#   brewery_id: 1781,
+#   name: 'COMRADE!',
+#   style: 'Anti-Imperial Stout',
+#   abv: "2.3%"
+# )
 
 
-# Beer.create({user_id: 1, brewery_id: 1, name: 'Ornette', style: 'Grisette', abv: "3.5%"})
-# Beer.create({user_id: 1, brewery_id: 1, name: 'Raised By Wolves', style: 'Pale Ale', abv: "5.5%"})
-
+# Beer.create({user_id: 1, brewery_id: 1781, name: 'Ornette', style: 'Grisette', abv: "3.5%"})
+# Beer.create({user_id: 1, brewery_id: 1780, name: 'Raised By Wolves', style: 'Aromatic Pale Ale', abv: "5.5%"})
+# Beer.create({user_id: 1, brewery_id: 1781, name: 'COMRADE!', style: 'Anti-Imperial Stout', abv: "2.3%"})
 
 # 15.times do
 #   Beer.create(

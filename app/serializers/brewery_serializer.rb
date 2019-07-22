@@ -3,5 +3,7 @@ class BrewerySerializer < ActiveModel::Serializer
 
   has_many :beers
   has_many :users, through: :beers
-  has_many :comments, through: :beers
 end
+
+
+# has_many :comments, through: :beers

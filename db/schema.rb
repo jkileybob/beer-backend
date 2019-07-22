@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_160410) do
 
   create_table "breweries", force: :cascade do |t|
     t.string "name"
+    t.string "brewery_type"
     t.string "street"
     t.string "city"
     t.string "state"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_07_18_160410) do
     t.string "longitude"
     t.string "latitude"
     t.string "phone"
-    t.string "website_url", default: "http://www.rightproperbrewing.com/"
+    t.string "website_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
