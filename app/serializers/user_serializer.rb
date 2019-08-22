@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :username, :password_digest, :avatar, :bio, :location
+  attributes :username, :password, :avatar, :bio, :location
 
   has_many :beers
   has_many :breweries, through: :beers

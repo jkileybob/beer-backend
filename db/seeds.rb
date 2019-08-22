@@ -16,8 +16,8 @@ User.create(
 )
 
 User.create(
-  username: "heebz",
-  password: "gay",
+  username: "robin",
+  password: "hi",
   avatar: "https://www.fofrescue.org/wp-content/uploads/2018/04/Preparing-200x300.jpg",
   bio: " I love Ted",
   location: "Washington, D.C."
@@ -127,7 +127,6 @@ User.create(
 
 ############################# ETC:
 
-# User.create({username: "kb", password: "gay", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "bitch",
-#   location: "D.C. Baby"})
+User.create({username: "robin", password: "hi", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "anything else", location: "D.C. Baby"})
 
 # Comment.create({beer_id: 1, text:"ornette is light and delicious"})
