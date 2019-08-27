@@ -7,21 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ################# USER:
-User.create(
-  username: "kb",
-  password: "gay",
-  avatar: "https://placekitten.com/g/200/300",
-  bio: " I love Lindsay",
-  location: "Washington, D.C."
-)
-
-User.create(
-  username: "robin",
-  password: "hi",
-  avatar: "https://www.fofrescue.org/wp-content/uploads/2018/04/Preparing-200x300.jpg",
-  bio: " I love Ted",
-  location: "Washington, D.C."
-)
+# User.create(
+#   username: "kb",
+#   password: "gay",
+#   avatar: "https://placekitten.com/g/200/300",
+#   bio: " I love Lindsay",
+#   location: "Washington, D.C."
+# )
+#
+# User.create(
+#   username: "Lindsay",
+#   password: "gay",
+#   avatar: "https://www.fofrescue.org/wp-content/uploads/2018/04/Preparing-200x300.jpg",
+#   bio: " I love Ted",
+#   location: "Washington, D.C."
+# )
 
 # 3.times do
 #   User.create(
@@ -34,20 +34,7 @@ User.create(
 # end
 
 ###################### BREWERY:
-# Brewery.create(
-#   id: 1781,
-#   name: "Right Proper Brewing Company",
-#   brewery_type: "brewpub",
-#   street: "624 T Street NW",
-#   city: "Washington",
-#   state: "District of Columbia",
-#   postal_code: "20001",
-#   country: "United States",
-#   longitude: "-77.021375",
-#   latitude: "38.915412",
-#   phone: "(202)607-2337",
-#   website_url: "http://www.rightproperbrewing.com"
-# )
+# Brewery.create({id: 1781, name: "Right Proper Brewing Company", brewery_type: "brewpub", street: "624 T Street NW", city: "Washington", state: "District of Columbia", postal_code: "20001", country: "United States", longitude: "-77.021375", latitude: "38.915412", phone: "(202)607-2337", website_url: "http://www.rightproperbrewing.com"})
 
 ##########  example from Open Brewery DB:
 # {
@@ -69,19 +56,8 @@ User.create(
 #   ]
 # },
 
-# 3.times do
-#   Brewery.create(
-#     name: Faker::Beer.brand,
-#     street: Faker::Address.street_address,
-#     city: Faker::Address.city,
-#     state: Faker::Address.state,
-#     postal_code: Faker::Address.zip_code,
-#     country: Faker::Address.country,
-#     longitude: Faker::Address.longitude,
-#     latitude: Faker::Address.latitude,
-#     phone: Faker::PhoneNumber.cell_phone
-#   )
-# end
+###########Favorites:
+# Favorite.create({user_id: 1, brewery_id: 1781})
 
 
 ####################################### BEER:
@@ -127,6 +103,6 @@ User.create(
 
 ############################# ETC:
 
-User.create({username: "robin", password: "hi", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "anything else", location: "D.C. Baby"})
+User.create({username: "Kiley", password: "gay", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "hello, world", location: "D.C. Baby"})
 
 # Comment.create({beer_id: 1, text:"ornette is light and delicious"})
