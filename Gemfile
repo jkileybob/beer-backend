@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.3.3'
 
+#nokogiri update:
+gem "nokogiri", ">= 1.10.4"
+
 #JWT:
 gem 'jwt', '~> 1.5', '>= 1.5.4'
 
