@@ -36,6 +36,8 @@
 ###################### BREWERY:
 # Brewery.create({id: 1781, name: "Right Proper Brewing Company", brewery_type: "brewpub", street: "624 T Street NW", city: "Washington", state: "District of Columbia", postal_code: "20001", country: "United States", longitude: "-77.021375", latitude: "38.915412", phone: "(202)607-2337", website_url: "http://www.rightproperbrewing.com"})
 
+# Brewery.create({id: 6780, name: "Jester King Brewery"})
+
 ##########  example from Open Brewery DB:
 # {
 #   "id": 1780,
@@ -58,7 +60,7 @@
 
 ###########Favorites:
 # Favorite.create({user_id: 1, brewery_id: 1781})
-
+# Favorite.create({user_id: 1, brewery_id: 6780})
 
 ####################################### BEER:
 # Beer.create(
