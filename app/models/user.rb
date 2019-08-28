@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :breweries, through: :favorites
 
   has_many :beers

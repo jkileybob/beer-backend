@@ -1,6 +1,9 @@
 class BrewerySerializer < ActiveModel::Serializer
   attributes :name, :street, :city, :state, :postal_code, :country, :longitude, :latitude, :phone, :website_url
 
+  has_many :favorites, dependent: :destroy
+  has_many :users, through: :favorites
+
   has_many :beers
   has_many :users, through: :beers
 end
