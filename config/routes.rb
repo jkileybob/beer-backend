@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
       post '/login', to: 'auth#create'        # localhost:4000/api/v1/login
       get '/profile', to: 'users#profile'      # localhost:4000/api/v1/profile
-      get '/favorites', to: "favorites#show"
-      
-      get '/breweries', to: 'breweries#index'
-      # get '/beers', to: 'beers#index'    #localhost:4000/api/v1/beers
 
     end
   end
