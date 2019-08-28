@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
       post '/login', to: 'auth#create'        # localhost:4000/api/v1/login
       get '/profile', to: 'users#profile'      # localhost:4000/api/v1/profile
-
+      post '/add-favorites/', to: 'favorites#create'
     end
   end
 end
