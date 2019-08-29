@@ -105,6 +105,6 @@
 
 ############################# ETC:
 
-User.create({username: "Kiley", password: "gay", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "hello, world", location: "D.C. Baby"})
+User.create({username: "Kiley", password: "gay", avatar: "https://unionproductionsblog.files.wordpress.com/2010/04/kileybobbitt.jpg?w=500", bio: "hello, world", location: "D.C."})
 
 # Comment.create({beer_id: 1, text:"ornette is light and delicious"})
