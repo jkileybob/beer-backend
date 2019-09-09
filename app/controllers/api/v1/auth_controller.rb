@@ -32,11 +32,11 @@ end
 #       "Accept":"application/json"
 #     },
 #     body: JSON.stringify({
-#       username:"kb",
+#       username:"Kiley",
 #       password:"gay"
 #     })
 # })
 # .then(res =>res.json())
 # .then(data => {
-#   console.log(data)
+#   console.log(data.token);
 # })
