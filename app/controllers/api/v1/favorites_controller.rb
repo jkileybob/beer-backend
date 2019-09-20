@@ -3,9 +3,10 @@ require 'byebug'
 class Api::V1::FavoritesController < ApplicationController
 
   before_action :find_user_and_brewery, only: [:create]
-  before_action :find_user_favs, only: [:index]
+  # before_action :find_user_favs, only: [:index]
 
   def create
+    # byebug
     @favorite = Favorite.create({
       user_id: @user.id,
       brewery_id: @brewery.id
@@ -22,24 +23,30 @@ class Api::V1::FavoritesController < ApplicationController
 
 
   def index
-    render json: @user.favorites
+    # @favorite = Favorite.find({
+    #   user_id: @user.id
+    #   })
+    # render json: @user.favorites
+    render json: @favorites = Favorite.all
+    # byebug
   end
 
   private
 
   def find_user_and_brewery
+    # byebug
     token = request.headers["Authentication"].split(' ')[1]
     payload = decode(token)
     @user = User.find(payload[0]["id"])
     @brewery = Brewery.find_by(id: params["brewery_id"])
-    # byebug
     # so far this is only for a brewery that is saved in the local db
   end
 
-  def find_user_favs
-    token = request.headers["Authentication"].split(' ')[1]
-    payload = decode(token)
-    @user = User.find(payload[0]["id"])
-  end
+  # def find_user_favs
+  #   byebug
+  #   token = request.headers["Authentication"].split(' ')[1]
+  #   payload = decode(token)
+  #   @user = User.find(payload[0]["id"])
+  # end
 
 end
