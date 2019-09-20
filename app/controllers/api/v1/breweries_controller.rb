@@ -21,7 +21,7 @@ class Api::V1::BreweriesController < ApplicationController
         longitude: params[:longitude],
         latitude: params[:latitude],
         phone: params[:phone],
-        website_url: params[:website_url],
+        website_url: params[:website_url]
       })
   end
 
