@@ -6,11 +6,12 @@ Rails.application.routes.draw do
       resources :users
       resources :beers
       resources :breweries
-      resources :favorites
+      # resources :favorites
 
       post '/login', to: 'auth#create'        # localhost:4000/api/v1/login
       get '/profile', to: 'users#profile'      # localhost:4000/api/v1/profile
       post '/add-favorites/', to: 'favorites#create'
+      get '/favorites', to: 'favorites#index_user_favs'   # localhost:4000/api/v1/favorites
     end
   end
 end
