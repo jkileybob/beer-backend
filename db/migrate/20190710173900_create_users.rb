@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :avatar
       t.string :bio
       t.string :location
+      t.integer :beer_id
 
       t.timestamps
     end

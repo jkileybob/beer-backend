@@ -1,9 +1,10 @@
 class BeerSerializer < ActiveModel::Serializer
-  attributes :user_id, :brewery_id, :name, :style, :abv
+  attributes :brewery_id, :name, :style, :abv, :tasting_note, :rating, :comment
 
-  has_many :users
-  belongs_to :brewery
-  # has_many :comments
+  has_many :user_beers, dependent: :destroy
+  has_many :users, through: :user_beers
+
+  has_many :brew_beers, dependent: :destroy
+  has_many :breweries, through: :brew_beers
+
 end
-
-# :comment_id,

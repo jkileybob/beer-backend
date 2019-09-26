@@ -4,7 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :favorites, dependent: :destroy
   has_many :breweries, through: :favorites
 
-  has_many :beers
-  has_many :breweries, through: :beers
-  # has_many :comments, through: :beers
+  has_many :user_beers, dependent: :destroy
+  has_many :beers, through: :user_beers
+
 end
