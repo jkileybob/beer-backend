@@ -67,7 +67,7 @@ Brewery.create({id: 6780})
 
 ###########Favorites:
 Favorite.create({user_id: 1, brewery_id: 1781})
-# Favorite.create({user_id: 1, brewery_id: 6780})
+Favorite.create({user_id: 1, brewery_id: 6780})
 
 ####################################### BEER:
 # Beer.create(
