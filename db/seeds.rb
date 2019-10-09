@@ -94,12 +94,17 @@ Favorite.create({user_id: 1, brewery_id: 6780})
 #   abv: "2.3%"
 # )
 
-UserBeer.create({user_id: 1, beer_id: 1})
 
 BrewBeer.create({beer_id: 1, brewery_id: 1781})
 Beer.create({user_id: 1, brewery_id: 1781, name: 'Ornette', style: 'Grisette', abv: "3.5%", tasting_note: "light, crisp, great spice character, quenching", rating: 5, comment: "Eloquent and sessionble. I could drink this beer all night." })
 # Beer.create({user_id: 1, brewery_id: 1780, name: 'Raised By Wolves', style: 'Aromatic Pale Ale', abv: "5.5%"})
 # Beer.create({user_id: 1, brewery_id: 1781, name: 'COMRADE!', style: 'Anti-Imperial Stout', abv: "2.3%"})
+
+
+Beer.create(user_id: 2, brewery_id: 6780, name: 'Part & Parcel', style: 'Farm Style Beer', abv: "5.5%", tasting_note: "Pours a cloudy reddish brown color with fizzy off-white head. Funk, bread, toasted malt, dough, and some hay on the nose; follows onto the palate. Medium bodied. Finishes with a lot of bready notes, some toast, and a little bit of nuttiness.", rating: 5, comment: "Batch #1. Unfiltered. Unpasteurized. Naturally conditioned. The first beer ever made with 100% Texas grown malted barely.")
+
+BrewBeer.create({beer_id: 6, brewery_id: 6780})
+UserBeer.create({user_id: 2, beer_id: 6})
 
 # 15.times do
 #   Beer.create(

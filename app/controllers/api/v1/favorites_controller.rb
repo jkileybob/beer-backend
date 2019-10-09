@@ -14,8 +14,6 @@ class Api::V1::FavoritesController < ApplicationController
         brewery_id: @favorites.map { |fav| fav.brewery_id }
       }
     }
-
-
   end
 
 
