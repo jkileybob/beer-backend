@@ -101,10 +101,32 @@ Beer.create({user_id: 1, brewery_id: 1781, name: 'Ornette', style: 'Grisette', a
 # Beer.create({user_id: 1, brewery_id: 1781, name: 'COMRADE!', style: 'Anti-Imperial Stout', abv: "2.3%"})
 
 
-Beer.create(user_id: 2, brewery_id: 6780, name: 'Part & Parcel', style: 'Farm Style Beer', abv: "5.5%", tasting_note: "Pours a cloudy reddish brown color with fizzy off-white head. Funk, bread, toasted malt, dough, and some hay on the nose; follows onto the palate. Medium bodied. Finishes with a lot of bready notes, some toast, and a little bit of nuttiness.", rating: 5, comment: "Batch #1. Unfiltered. Unpasteurized. Naturally conditioned. The first beer ever made with 100% Texas grown malted barely.")
+Beer.create(
+  user_id: 2,
+  brewery_id: 6780,
+  name: 'Part & Parcel',
+  style: 'Farm Style Beer',
+  abv: "5.5%",
+  tasting_note: "Pours a cloudy reddish brown color with fizzy off-white head. Funk, bread, toasted malt, dough, and some hay on the nose; follows onto the palate. Medium bodied. Finishes with a lot of bready notes, some toast, and a little bit of nuttiness.",
+  rating: 5,
+  comment: "Batch #1. Unfiltered. Unpasteurized. Naturally conditioned. The first beer ever made with 100% Texas grown malted barely."
+)
 
-BrewBeer.create({beer_id: 6, brewery_id: 6780})
-UserBeer.create({user_id: 2, beer_id: 6})
+
+Beer.create(
+  user_id: 2,
+  brewery_id: 1772,
+  name: 'Brau Pils',
+  style: 'Pilsner',
+  abv: "4.5%",
+  tasting_note: "Tastes a lot like corn straw.",
+  rating: 1,
+  comment: "Not a great pilsner, but the gays will drink it if it's labeled with a rainbow in June."
+)
+
+
+BrewBeer.create({beer_id: 8, brewery_id: 1772})
+UserBeer.create({user_id: 2, beer_id: 8})
 
 # 15.times do
 #   Beer.create(
