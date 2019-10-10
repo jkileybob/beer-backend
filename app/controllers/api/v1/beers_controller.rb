@@ -3,7 +3,7 @@ require 'byebug'
 class Api::V1::BeersController < ApplicationController
 
   before_action :find_user, only: [:index_user_beers]
-  before_action :find_user_and_brewery, only: [:create_beer]
+  before_action :find_user_and_brewery, only: [:create_beer, :update]
 
 
   def show
@@ -37,6 +37,32 @@ class Api::V1::BeersController < ApplicationController
       user_id: @user.id,
       beer_id: @beer.id
     })
+
+    render json: {
+      brewery: @brewery,
+      beer: @beer
+    }
+  end
+
+  def edit
+    @beer = Beer.find_by(id: params[:id])
+  end
+
+  def update
+    @beer = Beer.find_by(id: params[:id])
+    byebug
+    @beer.update(
+      name: params["name"],
+      style: params["style"],
+      abv: params["abv"],
+      tasting_note: params["tasting_note"],
+      rating: params["rating"],
+      comment: params["comment"]
+    )
+    render json: {
+      brewery: @brewery,
+      beer: @beer
+    }
   end
 
   private
