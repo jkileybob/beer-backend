@@ -14,7 +14,18 @@ class Api::V1::BeersController < ApplicationController
 
   def index_user_beers
     @beers = @user.beers
-    render json:  @beers.all
+    render json: @beers.each do |beer| {
+      id: beer.id,
+      brewery_id: @brewery.id,
+      name: beer.name,
+      style: beer.style,
+      abv: beer.abv,
+      tasting_note: beer.tasting_note,
+      rating: beer.rating,
+      comment: beer.comment
+      }
+    end
+
   end
 
   def create_beer
@@ -39,8 +50,16 @@ class Api::V1::BeersController < ApplicationController
     })
 
     render json: {
-      brewery: @brewery,
-      beer: @beer
+      beer: {
+        id: @beer.id,
+        brewery_id: @brewery.id,
+        name: @beer.name,
+        style: @beer.style,
+        abv: @beer.abv,
+        tasting_note: @beer.tasting_note,
+        rating: @beer.rating,
+        comment: @beer.comment
+      }
     }
   end
 
@@ -50,19 +69,31 @@ class Api::V1::BeersController < ApplicationController
 
   def update
     @beer = Beer.find_by(id: params[:id])
-    byebug
-    @beer.update(
-      name: params["name"],
-      style: params["style"],
-      abv: params["abv"],
-      tasting_note: params["tasting_note"],
-      rating: params["rating"],
-      comment: params["comment"]
-    )
-    render json: {
-      brewery: @brewery,
-      beer: @beer
-    }
+
+    if @beer.update(
+        name: params["name"],
+        style: params["style"],
+        abv: params["abv"],
+        tasting_note: params["tasting_note"],
+        rating: params["rating"],
+        comment: params["comment"]
+      )
+      render json: {
+        beer: {
+          id: @beer.id,
+          brewery_id: @brewery.id,
+          name: @beer.name,
+          style: @beer.style,
+          abv: @beer.abv,
+          tasting_note: @beer.tasting_note,
+          rating: @beer.rating,
+          comment: @beer.comment
+        }
+      }
+    else
+      render js: "alert('Oops! Beer did not seem to update.')"
+    end
+
   end
 
   private

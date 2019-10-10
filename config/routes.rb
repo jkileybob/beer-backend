@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       get '/beers', to: 'beers#index_user_beers'
       post '/add-beer/', to: 'beers#create_beer'
 
+      patch '/edit-beer', to: 'beers#update'
+
       get '/all', to: 'beers#show'
     end
   end

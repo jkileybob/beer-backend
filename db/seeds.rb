@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 ################# USER:
 
@@ -28,15 +21,6 @@ User.create({username: "AOC", password: "hi", avatar: "https://thehill.com/sites
 #   location: "Washington, D.C."
 # )
 
-# 3.times do
-#   User.create(
-#     username: Faker::TvShows::ParksAndRec.character,
-#     password: "hi",
-#     avatar: "https://placekitten.com/200/300",
-#     bio: Faker::GreekPhilosophers.quote,
-#     location: Faker::Address.city
-#   )
-# end
 
 ###################### BREWERY:
 # Brewery.create({id: 1781, name: "Right Proper Brewing Company", brewery_type: "brewpub", street: "624 T Street NW", city: "Washington", state: "District of Columbia", postal_code: "20001", country: "United States", longitude: "-77.021375", latitude: "38.915412", phone: "(202)607-2337", website_url: "http://www.rightproperbrewing.com"})
@@ -70,30 +54,6 @@ Favorite.create({user_id: 1, brewery_id: 1781})
 Favorite.create({user_id: 1, brewery_id: 6780})
 
 ####################################### BEER:
-# Beer.create(
-#   user_id: 1,
-#   brewery_id: 1781,
-#   name: 'Ornette',
-#   style: 'Grisette',
-#   abv: "3.5%"
-# )
-#
-# Beer.create(
-#   user_id: 1,
-#   brewery_id: 1780,
-#   name: 'Raised By Wolves',
-#   style: 'Aromatic Pale Ale',
-#   abv: "5.5%"
-# )
-#
-# Beer.create(
-#   user_id: 1,
-#   brewery_id: 1781,
-#   name: 'COMRADE!',
-#   style: 'Anti-Imperial Stout',
-#   abv: "2.3%"
-# )
-
 
 BrewBeer.create({beer_id: 1, brewery_id: 1781})
 Beer.create({user_id: 1, brewery_id: 1781, name: 'Ornette', style: 'Grisette', abv: "3.5%", tasting_note: "light, crisp, great spice character, quenching", rating: 5, comment: "Eloquent and sessionble. I could drink this beer all night." })
@@ -111,6 +71,8 @@ Beer.create(
   rating: 5,
   comment: "Batch #1. Unfiltered. Unpasteurized. Naturally conditioned. The first beer ever made with 100% Texas grown malted barely."
 )
+BrewBeer.create({beer_id: 20, brewery_id: 6780})
+UserBeer.create({user_id: 2, beer_id: 20})
 
 
 Beer.create(
@@ -123,23 +85,5 @@ Beer.create(
   rating: 1,
   comment: "Not a great pilsner, but the gays will drink it if it's labeled with a rainbow in June."
 )
-
-
-BrewBeer.create({beer_id: 8, brewery_id: 1772})
-UserBeer.create({user_id: 2, beer_id: 8})
-
-# 15.times do
-#   Beer.create(
-#     user_id: 1,
-#     brewery_id: 1,
-#     name: Faker::Beer.name,
-#     style: Faker::Beer.style,
-#     abv: Faker::Beer.alcohol
-#   )
-# end
-
-
-############################# ETC:
-
-
-# Comment.create({beer_id: 1, text:"ornette is light and delicious"})
+BrewBeer.create({beer_id: 21, brewery_id: 1772})
+UserBeer.create({user_id: 2, beer_id: 21})
