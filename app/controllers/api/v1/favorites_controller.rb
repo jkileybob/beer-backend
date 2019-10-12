@@ -16,14 +16,11 @@ class Api::V1::FavoritesController < ApplicationController
     }
   end
 
-
   def create
-    # byebug
     @favorite = Favorite.create({
       user_id: @user.id,
       brewery_id: @brewery.id
     })
-    # byebug
     render json: {
       brewery: @brewery,
       favs: @user.favorites.map { |fav| fav.brewery_id }

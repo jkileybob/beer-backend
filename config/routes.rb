@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       resources :users
-      # resources :beers
       resources :breweries
+      # resources :beers
       # resources :favorites
 
-# localhost:4000/api/v1/
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
 
@@ -21,6 +20,7 @@ Rails.application.routes.draw do
       patch '/edit-beer', to: 'beers#update'
       delete '/delete-beer/:id', to: 'beers#destroy'
 
+      # localhost:4000/api/v1/
     end
   end
 end
