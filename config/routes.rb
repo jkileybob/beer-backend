@@ -8,18 +8,19 @@ Rails.application.routes.draw do
       resources :breweries
       # resources :favorites
 
-      post '/login', to: 'auth#create'        # localhost:4000/api/v1/login
+# localhost:4000/api/v1/
+      post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
-            # localhost:4000/api/v1/profile
+
       post '/add-favorites/', to: 'favorites#create'
-      get '/favorites', to: 'favorites#index_user_favs'   # localhost:4000/api/v1/favorites
+      get '/favorites', to: 'favorites#index_user_favs'
 
       get '/beers', to: 'beers#index_user_beers'
+      get '/beers/:id', to: 'beers#show_beer'
       post '/add-beer/', to: 'beers#create_beer'
-
       patch '/edit-beer', to: 'beers#update'
+      delete '/delete-beer/:id', to: 'beers#destroy'
 
-      get '/all', to: 'beers#show'
     end
   end
 end
