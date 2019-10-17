@@ -10,12 +10,12 @@ class Api::V1::BreweriesController < ApplicationController
     render json: @brewery
   end
 
-  def create
-    @brewery = Brewery.create({
-        id: params[:id]
-      })
-    render json: @brewery
-  end
+  # def create
+  #   @brewery = Brewery.create({
+  #       id: params[:id]
+  #     })
+  #   render json: @brewery
+  # end
 
   def destroy
     @brewery.destroy

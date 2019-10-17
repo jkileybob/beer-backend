@@ -2,8 +2,8 @@ require 'byebug'
 
 class Api::V1::FavoritesController < ApplicationController
 
-  before_action :find_user_and_brewery, only: [:create]
-  before_action :find_user, only: [:index_user_favs]
+  # before_action :find_user_and_brewery, only: [:create]
+  before_action :find_user, only: [:index_user_favs, :create]
 
   def index_user_favs
     @favorites = @user.favorites
@@ -17,6 +17,11 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
   def create
+
+    @brewery = Brewery.create({
+        id: params["brewery_id"]
+      })
+      # byebug
     @favorite = Favorite.create({
       user_id: @user.id,
       brewery_id: @brewery.id
@@ -30,12 +35,12 @@ class Api::V1::FavoritesController < ApplicationController
 
   private
 
-  def find_user_and_brewery
-    token = request.headers["Authentication"].split(' ')[1]
-    payload = decode(token)
-    @user = User.find(payload[0]["id"])
-    @brewery = Brewery.find_by(id: params["brewery_id"])
-  end
+  # def find_user_and_brewery
+  #   token = request.headers["Authentication"].split(' ')[1]
+  #   payload = decode(token)
+  #   @user = User.find(payload[0]["id"])
+  #   @brewery = Brewery.find_by(id: params["brewery_id"])
+  # end
 
   def find_user
     token = request.headers["Authentication"].split(' ')[1]
