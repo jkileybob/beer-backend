@@ -87,6 +87,8 @@ class Api::V1::BeersController < ApplicationController
 
   end
 
+
+# need to destroy brewery and associated beers!!
   def destroy
     @beer.destroy
   end
