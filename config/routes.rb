@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
 
       post '/add-favorites/', to: 'favorites#create'
-      get '/favorites', to: 'favorites#index_user_favs'
+      # get '/favorites', to: 'favorites#index_user_favs'
+      delete '/favorites/:id', to: "favorites#destroy"
+      get '/favorites/:id', to: "favorites#show"
 
       get '/beers', to: 'beers#index_user_beers'
       get '/beers/:id', to: 'beers#show_beer'

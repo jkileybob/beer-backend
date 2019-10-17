@@ -3,16 +3,26 @@ require 'byebug'
 class Api::V1::FavoritesController < ApplicationController
 
   before_action :check_for_brewery, only: [:create]
-  before_action :find_user, only: [:index_user_favs, :create]
+  before_action :find_user, only: [:index_user_favs, :create, :destroy]
 
-  def index_user_favs
-    @favorites = @user.favorites
-    render json: {
-      user_favorites: {
-        fav_id: @favorites.map { |fav| fav.id },
-        brewery_id: @favorites.map { |fav| fav.brewery_id }
-      }
-    }
+  # def index_user_favs
+  #   @favorites = @user.favorites
+  #   render json: {
+  #     user_favorites: {
+  #       fav_id: @favorites.map { |fav| fav.id },
+  #       brewery_id: @favorites.map { |fav| fav.brewery_id }
+  #     }
+  #   }
+  # end
+
+  # def show
+  #   render json:  @favorites = Favorite.all
+  # end
+  #
+
+  def show
+    @favorite = Favorite.find_by(id: params[:id])
+    render json: @favorite
   end
 
   def create
@@ -26,6 +36,19 @@ class Api::V1::FavoritesController < ApplicationController
     }
   end
 
+  def destroy
+    @favorite = Favorite.find_by(id: params[:id])
+    @beers = @user.beers.all.find_all{ |beers| beers.brewery_id == @favorite.brewery_id }
+
+    if @user.id == @favorite.user_id
+      @favorite.destroy
+      # can't seem to get beers to destroy
+      @beers.each{|beer| beer.destroy}
+    else
+      render json: { message: "Nah. Server cannot delete this favorite rn." }
+    end
+
+  end
 
   private
 
@@ -48,3 +71,8 @@ class Api::V1::FavoritesController < ApplicationController
   end
 
 end
+
+
+# @favorites = Favorite.all.find_all{ |fav| fav.user_id == @user.id && fav.brewery_id == params["brewery_id"] }
+# byebug
+# Favorite.all.find_all{ |fav| fav.user_id == 3 && fav.brewery_id == 3191 }

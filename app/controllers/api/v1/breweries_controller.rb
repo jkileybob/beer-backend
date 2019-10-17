@@ -10,10 +10,6 @@ class Api::V1::BreweriesController < ApplicationController
     render json: @brewery
   end
 
-  def destroy
-    @brewery.destroy
-  end
-
   private
 
   def find_brewery
