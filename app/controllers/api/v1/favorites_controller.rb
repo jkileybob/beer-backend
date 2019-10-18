@@ -39,7 +39,7 @@ class Api::V1::FavoritesController < ApplicationController
   def destroy
     @favorite = Favorite.find_by(id: params[:id])
     @beers = @user.beers.all.find_all{ |beers| beers.brewery_id == @favorite.brewery_id }
-byebug
+
     if @user.id == @favorite.user_id
       @favorite.destroy
       # can't seem to get beers to destroy
